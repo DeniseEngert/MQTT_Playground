@@ -9,20 +9,18 @@ def on_message(client, userdata, message):
 
 
 def get_temperatures(sender):
-    mqttBroker = "mqtt.eclipseprojects.io"
+    #mqttBroker = "mqtt.eclipseprojects.io"
+    mqttBroker = "127.0.0.1"
 
     #topic_in = f"{sender}/TEMP_IN"
     #topic_out = f"{sender}/TEMP_OUT"
     topic_both = f"{sender}/#"
-    #print("Receiver IN:", topic_in, " Receiver OUT:", topic_out)
 
     client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
     client.connect(mqttBroker)
 
     client.loop_start()
 
-    #tempin = client.subscribe(topic_in)
-    #tempout = client.subscribe(topic_out)
     temp = client.subscribe(topic_both)
     client.on_message = on_message
 
