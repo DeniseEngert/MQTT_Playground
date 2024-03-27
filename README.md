@@ -1,19 +1,22 @@
 Playing around with MQTT, nothing sophisticated
 
-## Build Broker
+## Broker
+#### Build
     docker build -t <name> .  
 
-## Start Broker
+#### Start
     docker run -it -p 1883:1883 -p 9001:9001 -v <path to>/mosquitto.conf:/mosquitto/config/mosquitto.conf <container name>
 
-## Build Subscriber
+## Subscriber
+#### Build
     docker build -t mqtt_subscriber .
 
-## Run Subscriber
+#### Run
     docker run -ti mqtt_subscriber
 
-## Build Publisher
+## Publisher
+#### Build
     docker build -t mqtt_publisher .
 
-# Run Publisher
+#### Run
     docker run -ti mqtt_publisher
