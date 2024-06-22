@@ -24,7 +24,9 @@ def get_temperatures(sender):
     temp = client.subscribe(topic_both)
     client.on_message = on_message
 
-    time.sleep(30)
+    while True:
+        time.sleep(30)
+
     client.loop_stop()
 
 

@@ -5,7 +5,7 @@
 
 FROM python:3.12
 
-ADD subscriber1.py .
+ADD subscriber.py .
 
 RUN pip install paho-mqtt
 

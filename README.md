@@ -1,5 +1,6 @@
 Playing around with MQTT, nothing sophisticated
 
+# without docker-compose
 ## Broker
 #### Build
     docker build -t <name> .  
@@ -20,3 +21,5 @@ Playing around with MQTT, nothing sophisticated
 
 #### Run
     docker run -ti mqtt_publisher
+
+# with docker-compose

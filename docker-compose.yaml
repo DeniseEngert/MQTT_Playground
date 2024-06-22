@@ -1,0 +1,21 @@
+version: "3.7"
+services:
+  publisher:
+    image: mqtt_publisher
+    networks:
+      - my-test-network
+  subscriber:
+    image:
+      mqtt_subscriber
+    networks:
+      - my-test-network
+  broker:
+    image:
+      mqtt_broker
+    ports:
+      - "1338:1338"
+    networks:
+      - my-test-network
+volumes:
+networks:
+  my-test-network: { }
